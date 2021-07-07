@@ -37,23 +37,23 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btnCicloid">
+        <widget class="QPushButton" name="btnCycloid">
          <property name="text">
-          <string>Cicloid</string>
+          <string>Cycloid</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btnHuygens">
          <property name="text">
-          <string>HuygensCicloid</string>
+          <string>Huygens</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btnHypo">
          <property name="text">
-          <string>HypoCicloid</string>
+          <string>Hypo Cycloid</string>
          </property>
         </widget>
        </item>
