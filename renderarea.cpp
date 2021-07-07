@@ -45,6 +45,33 @@ void RenderArea::on_shape_changed()
     }
 }
 
+QPointF RenderArea::compute(float t)
+{
+    switch (mShape)
+    {
+    case Astroid:
+        return compute_astroid(t);
+        break;
+
+    case Cycloid:
+        return compute_cycloid(t);
+        break;
+
+    case HuygensCycloid:
+        return compute_huygens(t);
+        break;
+
+    case HypoCycloid:
+        return compute_hypo(t);
+        break;
+
+    default:
+        break;
+    }
+
+    return QPointF(0, 0);
+}
+
 QPointF RenderArea::compute_astroid(float t)
 {
     float cos_t = cos(t);
@@ -54,6 +81,21 @@ QPointF RenderArea::compute_astroid(float t)
     float y = 2 * sin_t * sin_t * sin_t;
 
     return QPointF(x, y);
+}
+
+QPointF RenderArea::compute_cycloid(float t)
+{
+
+}
+
+QPointF RenderArea::compute_huygens(float t)
+{
+
+}
+
+QPointF RenderArea::compute_hypo(float t)
+{
+
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
@@ -75,7 +117,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     float step = mIntervalLength / mStepCount;
     for (float t = 0; t < mIntervalLength; t += step)
     {
-        QPointF point = compute_astroid(t);
+        QPointF point = compute(t);
 
         QPoint pixel;
         pixel.setX(point.x() * mScale + center.x());

@@ -32,7 +32,11 @@ private:
     float mScale;
     int mStepCount;
 
+    QPointF compute(float t);   //dispatch function based on mShape's type
     QPointF compute_astroid(float t);
+    QPointF compute_cycloid(float t);
+    QPointF compute_huygens(float t);
+    QPointF compute_hypo(float t);
     void on_shape_changed();
 
 signals:
