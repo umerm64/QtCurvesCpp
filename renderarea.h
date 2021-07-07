@@ -29,6 +29,8 @@ private:
     QColor mShapeColor;
     ShapeType mShape;
 
+    QPointF compute_astroid(float t);
+
 signals:
 
 };
