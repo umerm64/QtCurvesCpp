@@ -21,7 +21,7 @@ void MainWindow::on_btnAstroid_clicked()
 }
 
 
-void MainWindow::on_btnCicloid_clicked()
+void MainWindow::on_btnCycloid_clicked()
 {
     this->ui->renderArea->setShape(RenderArea::Cycloid);
     this->ui->renderArea->repaint();
