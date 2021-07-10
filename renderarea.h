@@ -16,7 +16,10 @@ public:
     enum ShapeType { Astroid, Cycloid, HuygensCycloid, HypoCycloid, Line };
 
     void setBackgroundColor (QColor color) { mBackgroundColor = color; } //setter
-    QColor getBackgroundColor () const { return mBackgroundColor; } //getter
+    QColor backgroundColor () const { return mBackgroundColor; } //getter
+
+    void setShapeColor (QColor color) { mShapeColor = color; }
+    QColor shapeColor() const { return mShapeColor; }
 
     void setShape(ShapeType shape) { mShape = shape; on_shape_changed(); }
     ShapeType getshape() const { return mShape; }

@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <QColorDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -79,5 +80,20 @@ void MainWindow::on_spinInterval_valueChanged(double interval_length)
 void MainWindow::on_spinCount_valueChanged(int step_count)
 {
     this->ui->renderArea->setStepCount(step_count);
+}
+
+
+void MainWindow::on_btnBackground_clicked()
+{
+    //open color picker dialog and change the button's color
+    QColor color = QColorDialog::getColor(ui->renderArea->backgroundColor(), this, "Select Color");
+    ui->renderArea->setBackgroundColor(color);
+}
+
+
+void MainWindow::on_btnLineColor_clicked()
+{
+    QColor color = QColorDialog::getColor(ui->renderArea->shapeColor(), this, "Select Color");
+    ui->renderArea->setShapeColor(color);
 }
 
