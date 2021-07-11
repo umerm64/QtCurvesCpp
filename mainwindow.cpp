@@ -108,3 +108,12 @@ void MainWindow::on_btnCircle_clicked()
     update_ui();
 }
 
+
+void MainWindow::on_btnEllipse_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Ellipse);
+    this->ui->renderArea->repaint();
+
+    update_ui();
+}
+
