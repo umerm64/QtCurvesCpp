@@ -67,6 +67,12 @@ void RenderArea::on_shape_changed()
         mStepCount = 256;
         break;
 
+    case Fancy:
+        mScale = 10;
+        mIntervalLength = 12 * M_PI;
+        mStepCount = 512;
+        break;
+
     default:
         break;
     }
@@ -102,6 +108,10 @@ QPointF RenderArea::compute(float t)
 
     case Ellipse:
         return compute_ellipse(t);
+        break;
+
+    case Fancy:
+        return compute_fancy(t);
         break;
 
     default:
@@ -162,6 +172,14 @@ QPointF RenderArea::compute_ellipse(float t)
     float b = 1.1;
 
     return QPointF((a * cos(t)), (b * sin(t)));
+}
+
+QPointF RenderArea::compute_fancy(float t)
+{
+    return QPointF(
+                (11.0f * cos(t) - 6.0f * cos(11.0f * t / 6.0f)),
+                (11.0f * sin(t) - 6.0f * sin(11.0f * t / 6.0f))
+            );
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
